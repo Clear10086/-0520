@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>观测者隐秘据点</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{
+            background: #0a0a12;
+            color: #e2e2e2;
+            font-family: "宋体",sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            line-height: 2;
+        }
+        .box{
+            max-width: 700px;
+            border: 1px solid #444;
+            padding: 40px;
+            border-radius: 8px;
+            background: rgba(20,20,35,0.8);
+            box-shadow: 0 0 20px #222840;
+        }
+        .tip-text{
+            font-size: 17px;
+            margin-bottom: 35px;
+            text-align: center;
+        }
+        .btn-group{
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        button{
+            padding: 10px 26px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+        .yes-btn{
+            background: #2b3b66;
+            color: #fff;
+        }
+        .no-btn{
+            background: #333;
+            color: #ccc;
+        }
+        button:hover{
+            opacity: 0.8;
+        }
+        .hide-content{
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            display: none;
+            color: #b0b8d1;
+        }
+        /* 页面隐藏彩蛋文字（肉眼难察觉，选中可发现） */
+        .egg{
+            position: fixed;
+            bottom: 15px;
+            right: 20px;
+            color: #11111a;
+            font-size: 10px;
+            user-select: all;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p class="tip-text">
+            你好，亲爱的观测者！恭喜你找到这里！
+            <br>如果你能找到这里来，说明你破解了那个“神秘小代码”哈哈哈！
+            <br>不过我能在这里说的也不多，以下内容也涉及一定剧透。想好再来看哦！
+        </p>
+
+        <div class="btn-group">
+            <button class="yes-btn" onclick="showPlot()">决意查看剧透</button>
+            <button class="no-btn" onclick="backOut()">暂时放弃，原路返回</button>
+        </div>
+
+        <!-- 剧透隐藏内容，点击才显示 -->
+        <div class="hide-content" id="plotBox">
+            <p>【隐秘观测记录 · 部分剧情剧透】</p>
+            <p>1. 前期出现的无名暗号，皆是幕后观测组织留下的定位标记</p>
+            <p>2. 故事里看似无关的路人角色，实则都暗藏身份立场</p>
+            <p>3. 最终真相并非表面所见，所有伏笔都会在终章全部收拢</p>
+            <p>4. 下一条解谜线索，将藏在日常剧情的空白段落之中</p>
+            <p style="margin-top:15px;color:#888">谨慎前行，观测者的旅途才刚刚开始...</p>
+        </div>
+    </div>
+
+    <!-- ARG隐藏彩蛋：选中右下角小字可见 -->
+    <div class="egg">下一站密钥：星轨0713</div>
+
+    <script>
+        // 显示剧透
+        function showPlot(){
+            document.getElementById('plotBox').style.display = 'block';
+            alert('你已选择解锁剧透内容，请谨慎阅览');
+        }
+        // 放弃查看
+        function backOut(){
+            document.getElementById('plotBox').style.display = 'none';
+            alert('已退出隐秘据点，回归主线剧情');
+        }
+    </script>
+</body>
+</html>
